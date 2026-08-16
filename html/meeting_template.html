@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Club Executive Notes</title>
+  <style>
+    :root {
+      --bg-main: #f8fafc;
+      --surface: #ffffff;
+      --primary-dark: #0f172a;
+      --accent-blue: #2563eb;
+      --accent-amber: #d97706;
+      --accent-green: #059669;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Executive Header */
+    header {
+      background: var(--primary-dark);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .header-top h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .date-badge {
+      background: #1e293b;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .meta-item span {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Section Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--bg-main);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .time-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: var(--accent-blue);
+    }
+
+    /* Section 1: Roundtable Layout */
+    .member-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .member-row {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-blue);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .member-name {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .insight-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .insight-group { grid-template-columns: 1fr; }
+    }
+
+    .insight-box {
+      background: white;
+      padding: 0.75rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+
+    .insight-box label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .resonated label { color: var(--accent-green); }
+    .confusing label { color: var(--accent-amber); }
+
+    /* Section 2: Sandbox Layout */
+    .sandbox-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .sandbox-split { grid-template-columns: 1fr; }
+    }
+
+    .bull-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .bear-box {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .box-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .bull-box .box-title { color: var(--accent-green); }
+    .bear-box .box-title { color: var(--accent-amber); }
+
+    /* Section 3: Action Items */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      background: #f8fafc;
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .action-item strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 0.85rem;
+    }
+
+    /* Interactive Input Support */
+    [contenteditable="true"] {
+      outline: none;
+      transition: background 0.2s ease;
+    }
+
+    [contenteditable="true"]:hover, [contenteditable="true"]:focus {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+
+    /* Print Styles */
+    @media print {
+      body { background: white; padding: 0; }
+      .card, header { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- EXECUTIVE HEADER -->
+  <header>
+    <div class="header-top">
+      <h1 contenteditable="true">Book Club Executive Notes</h1>
+      <div class="date-badge" contenteditable="true">Date: Aug 20, 2026</div>
+    </div>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span>Book & Author</span>
+        <div contenteditable="true">The Dhandho Investor – M. Pabrai</div>
+      </div>
+      <div class="meta-item">
+        <span>Reading Assignment</span>
+        <div contenteditable="true">Chapters 4 – 6 (Pages 45–82)</div>
+      </div>
+      <div class="meta-item">
+        <span>Sandbox Stock</span>
+        <div contenteditable="true">$COST (Costco Wholesale)</div>
+      </div>
+      <div class="meta-item">
+        <span>Current Captain</span>
+        <div contenteditable="true">Alex M.</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: ROUNDTABLE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">1. The "Big Idea" Roundtable</div>
+      <span class="time-badge">15 Mins</span>
+    </div>
+    <div class="member-grid">
+      
+      <!-- Member 1 -->
+      <div class="member-row">
+        <div class="member-name" contenteditable="true">Member 1: Sarah</div>
+        <div class="insight-group">
+          <div class="insight-box resonated">
+            <label>Clicked / Resonated</label>
+            <div contenteditable="true">"Heads I win, tails I don't lose much." Low-risk asymmetric bets concept.</div>
+          </div>
+          <div class="insight-box confusing">
+            <label>Confusing / Debatable</label>
+            <div contenteditable="true">How to quantify "low risk" when dealing with high-growth tech stocks?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="member-row">
+        <div class="member-name" contenteditable="true">Member 2: David</div>
+        <div class="insight-group">
+          <div class="insight-box resonated">
+            <label>Clicked / Resonated</label>
+            <div contenteditable="true">Focusing on simple, slow-changing industries rather than fast-innovating ones.</div>
+          </div>
+          <div class="insight-box confusing">
+            <label>Confusing / Debatable</label>
+            <div contenteditable="true">Isn't there a danger of buying into a dying industry (value trap)?</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 2: ONE-STOCK SANDBOX -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">2. The "One-Stock" Sandbox</div>
+      <span class="time-badge">30 Mins</span>
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <strong>Applied Lens:</strong> 
+      <span contenteditable="true" style="color: var(--accent-blue); font-weight: 600;">Circle of Competence & Ultra-Low Cost Moat</span>
+    </div>
+
+    <div class="sandbox-split">
+      <div class="bull-box">
+        <div class="box-title">Bull Case / Chapter Alignment</div>
+        <div contenteditable="true">
+          Membership renewal rates (>90%) prove the moat. Simple business model: sell at near-cost, make profit on membership fees.
+        </div>
+      </div>
+      <div class="bear-box">
+        <div class="box-title">Bear Case / Friction Points</div>
+        <div contenteditable="true">
+          Trading at a high P/E relative to historical norms. Is the margin of safety sufficient at current valuation?
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 1rem; font-size: 0.9rem;">
+      <strong>Key Metrics / Charts Reviewed:</strong>
+      <div contenteditable="true" style="margin-top: 0.25rem; color: var(--text-muted);">
+        • 10-K Membership Fee Revenue vs Net Income<br>
+        • 10-Year ROIC Chart (Avg 15%+)
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: CAPTAIN'S LOG -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">3. Action Items & Captain's Log</div>
+      <span class="time-badge">15 Mins</span>
+    </div>
+    
+    <div class="action-grid">
+      <div class="action-item">
+        <strong>Next Reading Assignment</strong>
+        <div contenteditable="true">Chapters 7 – 9 (Pages 83–120)</div>
+      </div>
+      <div class="action-item">
+        <strong>Next Captain</strong>
+        <div contenteditable="true">Elena R.</div>
+      </div>
+      <div class="action-item">
+        <strong>Captain's Screen-Share Prep</strong>
+        <div contenteditable="true">Pull up Costco's Balance Sheet (Debt vs. Cash) & 5-year Capital Expenditure trend.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
