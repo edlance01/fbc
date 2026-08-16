@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Book Club</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #10b981;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #334155;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .book-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .book-author {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            background: #0f172a;
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        ul {
+            list-style-position: inside;
+            color: var(--text-muted);
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #000;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>The Finance Book Club</h1>
+            <p class="subtitle">Building wealth together, one chapter at a time.</p>
+        </header>
+
+        <section class="card">
+            <h2>📖 Current Pick</h2>
+            <div class="book-title">The Psychology of Money</div>
+            <div class="book-author">by Morgan Housel</div>
+            <div class="meta">
+                <div><strong>Next Meeting:</strong> Last Sunday of the Month</div>
+                <div><strong>Time:</strong> 7:00 PM EST</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>💡 What We Do</h2>
+            <ul>
+                <li>Read one personal finance or investing book each month</li>
+                <li>Host active monthly Zoom discussions</li>
+                <li>Share practical takeaways and personal budget strategies</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>📚 Upcoming Reading List</h2>
+            <ul>
+                <li><strong>Next Month:</strong> <em>I Will Teach You to Be Rich</em> — Ramit Sethi</li>
+                <li><strong>Following Month:</strong> <em>A Random Walk Down Wall Street</em> — Burton G. Malkiel</li>
+            </ul>
+            <a href="mailto:club@example.com" class="btn">Join the Club</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Finance Book Club. Open to all skill levels.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
