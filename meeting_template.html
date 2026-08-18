@@ -67,45 +67,27 @@
       <span class="time-badge">15 Mins</span>
     </div>
     
-    <div class="member-grid">
-      
-      <!-- Member 1 -->
+    <div class="member-grid" id="member-grid">
+      <!-- Member 1 (1 default entry) -->
       <div class="member-row">
         <div class="member-name-group">
-          <label for="member-1-name">Member Name:</label>
-          <input type="text" id="member-1-name" placeholder="Enter member name..." class="member-input">
+          <label>Member Name:</label>
+          <input type="text" placeholder="Enter member name..." class="member-input">
         </div>
         <div class="insight-group">
           <div class="insight-box resonated">
-            <label for="member-1-resonated">Clicked / Resonated</label>
-            <textarea id="member-1-resonated" rows="3" placeholder="What quote or concept clicked?"></textarea>
+            <label>Clicked / Resonated</label>
+            <textarea rows="3" placeholder="What quote or concept clicked?"></textarea>
           </div>
           <div class="insight-box confusing">
-            <label for="member-1-confusing">Confusing / Debatable</label>
-            <textarea id="member-1-confusing" rows="3" placeholder="What was confusing or debatable?"></textarea>
+            <label>Confusing / Debatable</label>
+            <textarea rows="3" placeholder="What was confusing or debatable?"></textarea>
           </div>
         </div>
       </div>
-
-      <!-- Member 2 -->
-      <div class="member-row">
-        <div class="member-name-group">
-          <label for="member-2-name">Member Name:</label>
-          <input type="text" id="member-2-name" placeholder="Enter member name..." class="member-input">
-        </div>
-        <div class="insight-group">
-          <div class="insight-box resonated">
-            <label for="member-2-resonated">Clicked / Resonated</label>
-            <textarea id="member-2-resonated" rows="3" placeholder="What quote or concept clicked?"></textarea>
-          </div>
-          <div class="insight-box confusing">
-            <label for="member-2-confusing">Confusing / Debatable</label>
-            <textarea id="member-2-confusing" rows="3" placeholder="What was confusing or debatable?"></textarea>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <button type="button" id="add-member-btn" class="add-btn">+ Add Member Entry</button>
   </div>
 
   <!-- SECTION 2: ONE-STOCK SANDBOX -->
@@ -123,23 +105,20 @@
     <div class="sandbox-split">
       <div class="bull-box">
         <div class="box-title">Bull Case / Chapter Alignment</div>
-        <textarea id="bull-case" rows="4">
-• Economic Moat: Strong competitive advantage (Rule 2).
+        <textarea id="bull-case" class="tall-textarea" rows="8">• Economic Moat: Strong competitive advantage (Rule 2).
 • Financial Discipline: Solid balance sheet & low debt (Rule 4).
 • Holding Horizon: Clear long-term compounding potential (Rule 5).</textarea>
       </div>
       <div class="bear-box">
         <div class="box-title">Bear Case / Pitfalls & Risks</div>
-        <textarea id="bear-case" rows="4">
-• Margin of Safety: Valuation is currently rich (Rule 3 risk).
+        <textarea id="bear-case" class="tall-textarea" rows="8">• Margin of Safety: Valuation is currently rich (Rule 3 risk).
 • Chasing Past Performance: Risk of overpaying due to recent stock momentum (Chapter 2 Mistake).</textarea>
       </div>
     </div>
 
     <div class="metrics-section">
       <label for="key-metrics">Key Metrics / Charts Reviewed:</label>
-      <textarea id="key-metrics" rows="2">
-• 10-Year Valuation Multiples (P/E & P/FCF vs. Historical Averages)
+      <textarea id="key-metrics" class="tall-textarea" rows="4">• 10-Year Valuation Multiples (P/E & P/FCF vs. Historical Averages)
 • Long-term Free Cash Flow trends vs. Revenue growth</textarea>
     </div>
   </div>
@@ -165,9 +144,17 @@
         <input type="text" id="screen-prep" value="Pull up our sandbox stock's gross margin history over 10 years and moat characteristics." class="standard-input">
       </div>
     </div>
+
+    <div class="next-page-container">
+      <button type="button" id="create-next-page-btn" class="action-btn">
+        📄 Create Page for Next Week
+      </button>
+    </div>
   </div>
 
 </div>
 
+<!-- External JavaScript File -->
+<script src="script.js"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@ input, textarea {
   color: var(--text-main);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  padding: 0.5rem;
+  padding: 0.55rem;
   width: 100%;
   background: white;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -51,6 +51,56 @@ input:focus, textarea:focus {
 
 textarea {
   resize: vertical;
+}
+
+/* Section 2 Tall Textareas */
+.tall-textarea {
+  min-height: 160px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.add-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #eff6ff;
+  color: var(--accent-blue);
+  border: 1px dashed var(--accent-blue);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #dbeafe;
+}
+
+.next-page-container {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  text-align: right;
+}
+
+.action-btn {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.action-btn:hover {
+  background: #1d4ed8;
 }
 
 /* Executive Header */
@@ -344,4 +394,5 @@ header {
   body { background: white; padding: 0; }
   .card, header, .principles-card, .rules-card { box-shadow: none; border: 1px solid #ccc; }
   input, textarea { border: none; background: transparent; padding: 0; }
+  .add-btn, .next-page-container { display: none; }
 }
