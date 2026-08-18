@@ -1,4 +1,4 @@
-Current url for index page: https://finance-5-rules.pages.dev/
+Current url for index page: https://fbc.edlance3.workers.dev/
 Cloudflare account under edlance3
 
 1. Need to change git repo to fbc (finance book club to save typing on url)
