@@ -1,4 +1,161 @@
-<div class="next-page-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Club Executive Notes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- EXECUTIVE HEADER & FORM FIELDS -->
+  <header>
+    <div class="header-top">
+      <h1>Book Club Executive Notes</h1>
+      <div class="date-badge">
+        <label for="meeting-date">Date:</label>
+        <input type="date" id="meeting-date" value="2026-08-19" class="header-input-date">
+      </div>
+    </div>
+    
+    <!-- Header Meta Grid Layout -->
+    <div class="meta-grid">
+      <!-- Top Left -->
+      <div class="meta-item">
+        <label for="book-title">Book & Author</label>
+        <input type="text" id="book-title" value="The Five Rules for Successful Stock Investing – Pat Dorsey" class="header-input">
+      </div>
+      
+      <!-- Top Right -->
+      <div class="meta-item">
+        <label for="reading-assignment">Reading Assignment</label>
+        <textarea id="reading-assignment" rows="3" class="header-input header-textarea">Chapters 1 & 2 (The 5 Rules & Mistakes to Avoid)</textarea>
+      </div>
+      
+      <!-- Bottom Row Container (Current Captain & Sandbox Stock Side-by-Side) -->
+      <div class="header-bottom-row">
+        <div class="meta-item">
+          <label for="current-captain">Current Captain</label>
+          <input type="text" id="current-captain" value="Morgan" class="header-input">
+        </div>
+        <div class="meta-item">
+          <label for="sandbox-stock">Sandbox Stock</label>
+          <input type="text" id="sandbox-stock" value="COST" class="header-input">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FIRST PRINCIPLES REVIEW -->
+  <div class="principles-card">
+    <div class="principles-title">💡 First Principles Review</div>
+    <ol class="principles-list">
+      <li><strong>Long-Term Fundamentals:</strong> Company fundamentals have a direct effect on share prices. This principle applies only over a long period of time.</li>
+      <li><strong>Cash Flows vs. Noise:</strong> The long-run performance of stocks is largely based on the expected future cash flows of the companies attached to them—it has very little to do with what the stock did over the past week or month.</li>
+    </ol>
+  </div>
+
+  <!-- SUMMARY OF THE 5 RULES -->
+  <div class="rules-card">
+    <div class="rules-title">📌 Summary: Pat Dorsey's 5 Rules for Successful Stock Investing</div>
+    <div class="rules-grid">
+      <div class="rule-item"><strong>1. Do Your Homework:</strong> Understand the business model, unit economics, and competitive dynamics thoroughly before buying.</div>
+      <div class="rule-item"><strong>2. Find Economic Moats:</strong> Invest in companies protected by sustainable competitive advantages (brand, switching costs, network effect, cost moat).</div>
+      <div class="rule-item"><strong>3. Have a Margin of Safety:</strong> Only buy stocks trading at a significant discount to their estimated intrinsic value.</div>
+      <div class="rule-item"><strong>4. Hold for the Long Haul:</strong> Let compounding work. Frequent trading incurs taxes, transaction fees, and behavioral mistakes.</div>
+      <div class="rule-item full-width"><strong>5. Know When to Sell:</strong> Sell when you made an analytical mistake, fundamentals permanently deteriorate, or better opportunities arise—not due to market panic.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: ROUNDTABLE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">1. The "Big Idea" Roundtable</div>
+      <span class="time-badge">15 Mins</span>
+    </div>
+    
+    <div class="member-grid" id="member-grid">
+      <!-- Member 1 (1 default entry) -->
+      <div class="member-row">
+        <div class="member-name-group">
+          <label>Member Name:</label>
+          <input type="text" placeholder="Enter member name..." class="member-input">
+        </div>
+        <div class="insight-group">
+          <div class="insight-box resonated">
+            <label>Clicked / Resonated</label>
+            <textarea rows="3" placeholder="What quote or concept clicked?"></textarea>
+          </div>
+          <div class="insight-box confusing">
+            <label>Confusing / Debatable</label>
+            <textarea rows="3" placeholder="What was confusing or debatable?"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" id="add-member-btn" class="add-btn">+ Add Member Entry</button>
+  </div>
+
+  <!-- SECTION 2: ONE-STOCK SANDBOX -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">2. The "One-Stock" Sandbox</div>
+      <span class="time-badge">30 Mins</span>
+    </div>
+    
+    <div class="applied-lens-group">
+      <label for="applied-lens">Applied Lens:</label>
+      <input type="text" id="applied-lens" value="The 5 Core Rules Audit & Common Pitfalls Checklist" class="standard-input">
+    </div>
+
+    <div class="sandbox-split">
+      <div class="bull-box">
+        <div class="box-title">Bull Case / Chapter Alignment</div>
+        <textarea id="bull-case" class="tall-textarea" rows="8">• Economic Moat: Strong competitive advantage (Rule 2).
+• Financial Discipline: Solid balance sheet & low debt (Rule 4).
+• Holding Horizon: Clear long-term compounding potential (Rule 5).</textarea>
+      </div>
+      <div class="bear-box">
+        <div class="box-title">Bear Case / Pitfalls & Risks</div>
+        <textarea id="bear-case" class="tall-textarea" rows="8">• Margin of Safety: Valuation is currently rich (Rule 3 risk).
+• Chasing Past Performance: Risk of overpaying due to recent stock momentum (Chapter 2 Mistake).</textarea>
+      </div>
+    </div>
+
+    <div class="metrics-section">
+      <label for="key-metrics">Key Metrics / Charts Reviewed:</label>
+      <textarea id="key-metrics" class="tall-textarea" rows="4">• 10-Year Valuation Multiples (P/E & P/FCF vs. Historical Averages)
+• Long-term Free Cash Flow trends vs. Revenue growth</textarea>
+    </div>
+  </div>
+
+  <!-- SECTION 3: CAPTAIN'S LOG -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">3. Action Items & Captain's Log</div>
+      <span class="time-badge">15 Mins</span>
+    </div>
+    
+    <div class="action-grid">
+      <div class="action-item">
+        <label for="next-reading">Next Reading Assignment</label>
+        <input type="text" id="next-reading" value="Chapters 3 & 4 (Economic Moats & Financial Statement Basics)" class="standard-input">
+      </div>
+      <div class="action-item">
+        <label for="next-captain">Next Captain</label>
+        <input type="text" id="next-captain" placeholder="Enter captain's name..." class="standard-input">
+      </div>
+      <div class="action-item full-width">
+        <label for="screen-prep">Captain's Screen-Share Prep</label>
+        <input type="text" id="screen-prep" value="Pull up our sandbox stock's gross margin history over 10 years and moat characteristics." class="standard-input">
+      </div>
+    </div>
+
+    <!-- Action Buttons Container -->
+    <div class="next-page-container">
       <button type="button" id="save-notes-btn" class="action-btn save-btn">
         💾 Save Current Notes
       </button>
@@ -6,3 +163,11 @@
         📄 Create Page for Next Week
       </button>
     </div>
+  </div>
+
+</div>
+
+<!-- External JavaScript File -->
+<script src="script.js"></script>
+</body>
+</html>
