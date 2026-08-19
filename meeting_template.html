@@ -19,22 +19,31 @@
         <input type="date" id="meeting-date" value="2026-08-19" class="header-input-date">
       </div>
     </div>
+    
+    <!-- Header Meta Grid Layout -->
     <div class="meta-grid">
+      <!-- Top Left -->
       <div class="meta-item">
         <label for="book-title">Book & Author</label>
         <input type="text" id="book-title" value="The Five Rules for Successful Stock Investing – Pat Dorsey" class="header-input">
       </div>
+      
+      <!-- Top Right -->
       <div class="meta-item">
         <label for="reading-assignment">Reading Assignment</label>
-        <input type="text" id="reading-assignment" value="Chapters 1 & 2 (The 5 Rules & Mistakes to Avoid)" class="header-input">
+        <textarea id="reading-assignment" rows="3" class="header-input header-textarea">Chapters 1 & 2 (The 5 Rules & Mistakes to Avoid)</textarea>
       </div>
-      <div class="meta-item">
-        <label for="sandbox-stock">Sandbox Stock</label>
-        <input type="text" id="sandbox-stock" value="COST" class="header-input">
-      </div>
-      <div class="meta-item">
-        <label for="current-captain">Current Captain</label>
-        <input type="text" id="current-captain" value="Morgan" class="header-input">
+      
+      <!-- Bottom Row Container (Current Captain & Sandbox Stock Side-by-Side) -->
+      <div class="header-bottom-row">
+        <div class="meta-item">
+          <label for="current-captain">Current Captain</label>
+          <input type="text" id="current-captain" value="Morgan" class="header-input">
+        </div>
+        <div class="meta-item">
+          <label for="sandbox-stock">Sandbox Stock</label>
+          <input type="text" id="sandbox-stock" value="COST" class="header-input">
+        </div>
       </div>
     </div>
   </header>
